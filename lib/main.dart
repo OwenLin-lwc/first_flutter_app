@@ -15,13 +15,23 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.red[600],
       ),
-      body: Center(child: Image.asset('assets/space_1.avif')),
-      // get the image from the internet
-      // body: Center(
-      //   child: Image.network(
-      //     'https://media.istockphoto.com/id/1914472061/photo/andromeda-spiral-galaxy-on-a-starry-night.jpg?s=1024x1024&w=is&k=20&c=2SrvKbOtrrleHGhcc_e-erNXfUssVAOCS8A7R6YMCaM=',
-      //   ),
-      // ),
+      body: Center(
+        // child: Icon(Icons.airport_shuttle, color: Colors.lightBlue, size: 50),
+        // child: ElevatedButton.icon(
+        //   onPressed: () {
+        //     print('Button Pressed!');
+        //   },
+        //   style: ElevatedButton.styleFrom(backgroundColor: Colors.lightBlue),
+        //   label: Text('Click Me'),
+        //   icon: Icon(Icons.mail, color: Colors.amber),
+        // ),
+        child: IconButton(
+          onPressed: () {
+            print('Button Pressed!');
+          },
+          icon: Icon(Icons.mail, color: Colors.amber),
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           print('Floating Action Button Pressed!');
