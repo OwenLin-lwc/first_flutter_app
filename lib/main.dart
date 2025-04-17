@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    MaterialApp(
-      home: Home(),
-    ),
-  );
+  runApp(MaterialApp(home: Home()));
 }
 
 class Home extends StatelessWidget {
@@ -19,18 +15,13 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.red[600],
       ),
-      body: Center(
-        child: Text(
-          'Hello World!',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 2,
-            color: Colors.grey[600],
-            fontFamily: 'IndieFlower',
-          ),
-        ),
-      ),
+      body: Center(child: Image.asset('assets/space_1.avif')),
+      // get the image from the internet
+      // body: Center(
+      //   child: Image.network(
+      //     'https://media.istockphoto.com/id/1914472061/photo/andromeda-spiral-galaxy-on-a-starry-night.jpg?s=1024x1024&w=is&k=20&c=2SrvKbOtrrleHGhcc_e-erNXfUssVAOCS8A7R6YMCaM=',
+      //   ),
+      // ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           print('Floating Action Button Pressed!');
