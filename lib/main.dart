@@ -4,13 +4,29 @@ void main() {
   runApp(
     MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: Text('First Flutter App'), centerTitle: true),
-        body: Center(child: Text('Hello World!')),
+        appBar: AppBar(
+          title: Text('First Flutter App'),
+          centerTitle: true,
+          backgroundColor: Colors.red[600],
+        ),
+        body: Center(
+          child: Text(
+            'Hello World!',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 2,
+              color: Colors.grey[600],
+              fontFamily: 'IndieFlower',
+            ),
+          ),
+        ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             print('Floating Action Button Pressed!');
           },
           child: Text('Click'),
+          backgroundColor: Colors.red[600],
         ),
       ),
     ),
