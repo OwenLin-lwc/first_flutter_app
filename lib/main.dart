@@ -1,55 +1,80 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(home: Home()));
+  runApp(MaterialApp(home: MyApp()));
 }
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[900],
       appBar: AppBar(
-        title: Text('First Flutter App'),
+        title: Text('Flutter Demo', style: TextStyle(color: Colors.white)),
         centerTitle: true,
-        backgroundColor: Colors.red[600],
+        backgroundColor: Colors.grey[850],
+        elevation: 0,
       ),
-      body: Row(
-        children: <Widget>[
-          Expanded(flex: 3, child: Image.asset('assets/space_1.avif')),
-          Expanded(
-            flex: 6,
-            child: Container(
-              padding: EdgeInsets.all(30),
-              color: Colors.cyan,
-              child: Text('1'),
+      body: Padding(
+        padding: EdgeInsets.fromLTRB(30, 40, 30, 0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/thumb.avif'),
+                radius: 40,
+              ),
             ),
-          ),
-          Expanded(
-            flex: 3,
-            child: Container(
-              padding: EdgeInsets.all(30),
-              color: Colors.pinkAccent,
-              child: Text('2'),
+            Divider(height: 90, color: Colors.grey[800]),
+            Text(
+              'NAME',
+              style: TextStyle(color: Colors.grey, letterSpacing: 2),
             ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              padding: EdgeInsets.all(30),
-              color: Colors.amber,
-              child: Text('3'),
+            SizedBox(height: 10),
+            Text(
+              'Owen',
+              style: TextStyle(
+                color: Colors.amberAccent[200],
+                letterSpacing: 2,
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-          ),
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          print('Floating Action Button Pressed!');
-        },
-        backgroundColor: Colors.red[600],
-        child: Text('Click'),
+            SizedBox(height: 30),
+            Text(
+              'CURRENT NINJA LEVEL',
+              style: TextStyle(color: Colors.grey, letterSpacing: 2),
+            ),
+            SizedBox(height: 10),
+            Text(
+              '8',
+              style: TextStyle(
+                color: Colors.amberAccent[200],
+                letterSpacing: 2,
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 30),
+            Row(
+              children: <Widget>[
+                Icon(Icons.mail, color: Colors.grey[400]),
+                SizedBox(width: 10),
+                Text(
+                  'owen4work@gmail.com',
+                  style: TextStyle(
+                    color: Colors.grey[400],
+                    fontSize: 18,
+                    letterSpacing: 1,
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
