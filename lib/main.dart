@@ -1,62 +1,15 @@
+import 'package:first_flutter_app/pages/home.dart';
 import 'package:flutter/material.dart';
-import 'models/quote.dart';
-import 'widgets/quote_card.dart';
 
 void main() {
-  runApp(MaterialApp(home: MyApp()));
+  runApp(MyApp());
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  List<Quote> quotes = [
-    Quote('Be yourself; everyone else is already taken.', 'Oscar Wilde'),
-    Quote(
-      'Two things are infinite: the universe and human stupidity; and I\'m not sure about the universe.',
-      'Albert Einstein',
-    ),
-    Quote('So many books, so little time.', 'Frank Zappa'),
-    Quote(
-      'A room without books is like a body without a soul.',
-      'Marcus Tullius Cicero',
-    ),
-    Quote(
-      'You only live once, but if you do it right, once is enough.',
-      'Mae West',
-    ),
-  ];
-
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey[200],
-      appBar: AppBar(
-        title: Text('Awesome Quotes'),
-        centerTitle: true,
-        backgroundColor: Colors.redAccent,
-      ),
-      // A RenderFlex overflowed by x pixels on the bottom in Flutter: Causes and How to Fix
-      // https://www.omi.me/blogs/flutter-errors/a-renderflex-overflowed-by-x-pixels-on-the-bottom-in-flutter-causes-and-how-to-fix
-      body: ListView(
-        children:
-            quotes
-                .map(
-                  (quote) => QuoteCard(
-                    quote,
-                    delete: () {
-                      setState(() {
-                        quotes.remove(quote);
-                      });
-                    },
-                  ),
-                )
-                .toList(),
-      ),
-    );
+    return MaterialApp(home: Home());
   }
 }
