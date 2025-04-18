@@ -40,7 +40,23 @@ class _MyAppState extends State<MyApp> {
         centerTitle: true,
         backgroundColor: Colors.redAccent,
       ),
-      body: Column(children: quotes.map((quote) => QuoteCard(quote)).toList()),
+      // A RenderFlex overflowed by x pixels on the bottom in Flutter: Causes and How to Fix
+      // https://www.omi.me/blogs/flutter-errors/a-renderflex-overflowed-by-x-pixels-on-the-bottom-in-flutter-causes-and-how-to-fix
+      body: ListView(
+        children:
+            quotes
+                .map(
+                  (quote) => QuoteCard(
+                    quote,
+                    delete: () {
+                      setState(() {
+                        quotes.remove(quote);
+                      });
+                    },
+                  ),
+                )
+                .toList(),
+      ),
     );
   }
 }
