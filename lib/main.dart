@@ -9,10 +9,26 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return NinjaCard();
+  }
+}
+
+class NinjaCard extends StatefulWidget {
+  const NinjaCard({super.key});
+
+  @override
+  State<NinjaCard> createState() => _NinjaCardState();
+}
+
+class _NinjaCardState extends State<NinjaCard> {
+  int ninjaLevel = 0;
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[900],
       appBar: AppBar(
-        title: Text('Flutter Demo', style: TextStyle(color: Colors.white)),
+        title: Text('Ninja ID Card', style: TextStyle(color: Colors.white)),
         centerTitle: true,
         backgroundColor: Colors.grey[850],
         elevation: 0,
@@ -50,7 +66,7 @@ class MyApp extends StatelessWidget {
             ),
             SizedBox(height: 10),
             Text(
-              '8',
+              '$ninjaLevel',
               style: TextStyle(
                 color: Colors.amberAccent[200],
                 letterSpacing: 2,
@@ -75,6 +91,15 @@ class MyApp extends StatelessWidget {
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            ninjaLevel += 1;
+          });
+        },
+        backgroundColor: Colors.grey[800],
+        child: Icon(Icons.add, color: Colors.white),
       ),
     );
   }
