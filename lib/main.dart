@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'models/quote.dart';
 
 void main() {
   runApp(MaterialApp(home: MyApp()));
@@ -12,12 +13,21 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  List<String> quotes = [
-    "The greatest glory in living lies not in never falling, but in rising every time we fall.",
-    "The way to get started is to quit talking and begin doing.",
-    "Life is what happens when you're busy making other plans.",
-    "Your time is limited, don't waste it living someone else's life.",
-    "If you set your goals ridiculously high and it's a failure, you will fail above everyone else's success.",
+  List<Quote> quotes = [
+    Quote('Be yourself; everyone else is already taken.', 'Oscar Wilde'),
+    Quote(
+      'Two things are infinite: the universe and human stupidity; and I\'m not sure about the universe.',
+      'Albert Einstein',
+    ),
+    Quote('So many books, so little time.', 'Frank Zappa'),
+    Quote(
+      'A room without books is like a body without a soul.',
+      'Marcus Tullius Cicero',
+    ),
+    Quote(
+      'You only live once, but if you do it right, once is enough.',
+      'Mae West',
+    ),
   ];
 
   @override
@@ -29,7 +39,12 @@ class _MyAppState extends State<MyApp> {
         centerTitle: true,
         backgroundColor: Colors.redAccent,
       ),
-      body: Column(children: quotes.map((quote) => Text(quote)).toList()),
+      body: Column(
+        children:
+            quotes
+                .map((quote) => Text('${quote.text} - ${quote.author}'))
+                .toList(),
+      ),
     );
   }
 }
