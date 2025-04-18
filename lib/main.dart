@@ -15,23 +15,15 @@ class Home extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.red[600],
       ),
-      body: Center(
-        // child: Icon(Icons.airport_shuttle, color: Colors.lightBlue, size: 50),
-        // child: ElevatedButton.icon(
-        //   onPressed: () {
-        //     print('Button Pressed!');
-        //   },
-        //   style: ElevatedButton.styleFrom(backgroundColor: Colors.lightBlue),
-        //   label: Text('Click Me'),
-        //   icon: Icon(Icons.mail, color: Colors.amber),
-        // ),
-        child: IconButton(
-          onPressed: () {
-            print('Button Pressed!');
-          },
-          icon: Icon(Icons.mail, color: Colors.amber),
-        ),
-      ),
+      // body: Container(
+      //   // padding: EdgeInsets.all(20),
+      //   // padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+      //   padding: EdgeInsets.fromLTRB(10, 20, 30, 40),
+      //   margin: EdgeInsets.all(30),
+      //   color: Colors.grey[400],
+      //   child: Text('Hello'),
+      // ),
+      body: Padding(padding: EdgeInsets.all(90), child: Text('Hello')),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           print('Floating Action Button Pressed!');
