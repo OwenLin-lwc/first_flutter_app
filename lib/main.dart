@@ -1,4 +1,6 @@
+import 'package:first_flutter_app/pages/choose_location.dart';
 import 'package:first_flutter_app/pages/home.dart';
+import 'package:first_flutter_app/pages/loading.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,6 +12,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: Home());
+    return MaterialApp(
+      initialRoute: '/home',
+      routes: {
+        '/': (context) => const Loading(),
+        '/home': (context) => const Home(),
+        '/location': (context) => const ChooseLocation(),
+      },
+    );
   }
 }
