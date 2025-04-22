@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart';
+import 'package:intl/intl.dart';
 
 class WorldTime {
   String location; // location name for the UI
@@ -16,9 +17,10 @@ class WorldTime {
         Uri.parse('https://www.timeapi.io/api/Time/current/zone?timeZone=$url'),
       );
       Map data = jsonDecode(response.body);
+      print(data['dateTime']);
 
       // get properties from data and set the time property
-      time = data['dateTime'];
+      time = DateFormat.jm().format(DateTime.parse(data['dateTime']));
     } catch (e) {
       print('Caught error: $e');
       time = 'Could not get time data';
